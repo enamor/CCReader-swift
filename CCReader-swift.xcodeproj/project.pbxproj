@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9199850C21894F5C00E7895E /* CCReaderTXTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199850B21894F5C00E7895E /* CCReaderTXTUtil.swift */; };
+		9199850E2189591600E7895E /* demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9199850D2189591600E7895E /* demo.txt */; };
 		91FEC39821882E780003014E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FEC39721882E780003014E /* AppDelegate.swift */; };
 		91FEC39A21882E780003014E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FEC39921882E780003014E /* ViewController.swift */; };
 		91FEC39D21882E780003014E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FEC39B21882E780003014E /* Main.storyboard */; };
 		91FEC39F21882E790003014E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FEC39E21882E790003014E /* Assets.xcassets */; };
 		91FEC3A221882E790003014E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FEC3A021882E790003014E /* LaunchScreen.storyboard */; };
+		91FEC3AC218830070003014E /* CCReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FEC3AB218830070003014E /* CCReaderController.swift */; };
+		91FEC3AE218839980003014E /* CCReaderContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FEC3AD218839980003014E /* CCReaderContentVC.swift */; };
+		91FEC3B121884ED00003014E /* CCReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FEC3B021884ED00003014E /* CCReaderViewModel.swift */; };
+		91FEC3B42188534E0003014E /* CCCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FEC3B32188534E0003014E /* CCCatalogue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9199850B21894F5C00E7895E /* CCReaderTXTUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderTXTUtil.swift; sourceTree = "<group>"; };
+		9199850D2189591600E7895E /* demo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.txt; sourceTree = "<group>"; };
 		91FEC39421882E780003014E /* CCReader-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCReader-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FEC39721882E780003014E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91FEC39921882E780003014E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +30,10 @@
 		91FEC39E21882E790003014E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91FEC3A121882E790003014E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91FEC3A321882E790003014E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91FEC3AB218830070003014E /* CCReaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderController.swift; sourceTree = "<group>"; };
+		91FEC3AD218839980003014E /* CCReaderContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderContentVC.swift; sourceTree = "<group>"; };
+		91FEC3B021884ED00003014E /* CCReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderViewModel.swift; sourceTree = "<group>"; };
+		91FEC3B32188534E0003014E /* CCCatalogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCCatalogue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9199850A21894EE400E7895E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9199850B21894F5C00E7895E /* CCReaderTXTUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		91FEC38B21882E780003014E = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +74,8 @@
 		91FEC39621882E780003014E /* CCReader-swift */ = {
 			isa = PBXGroup;
 			children = (
+				9199850D2189591600E7895E /* demo.txt */,
+				91FEC3A921882E940003014E /* Reader */,
 				91FEC39721882E780003014E /* AppDelegate.swift */,
 				91FEC39921882E780003014E /* ViewController.swift */,
 				91FEC39B21882E780003014E /* Main.storyboard */,
@@ -62,6 +84,42 @@
 				91FEC3A321882E790003014E /* Info.plist */,
 			);
 			path = "CCReader-swift";
+			sourceTree = "<group>";
+		};
+		91FEC3A921882E940003014E /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				9199850A21894EE400E7895E /* Util */,
+				91FEC3B2218853060003014E /* Model */,
+				91FEC3AF21884E3F0003014E /* ViewModel */,
+				91FEC3AA21882EA40003014E /* Controlller */,
+			);
+			path = Reader;
+			sourceTree = "<group>";
+		};
+		91FEC3AA21882EA40003014E /* Controlller */ = {
+			isa = PBXGroup;
+			children = (
+				91FEC3AB218830070003014E /* CCReaderController.swift */,
+				91FEC3AD218839980003014E /* CCReaderContentVC.swift */,
+			);
+			path = Controlller;
+			sourceTree = "<group>";
+		};
+		91FEC3AF21884E3F0003014E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91FEC3B021884ED00003014E /* CCReaderViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		91FEC3B2218853060003014E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91FEC3B32188534E0003014E /* CCCatalogue.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +183,7 @@
 				91FEC3A221882E790003014E /* LaunchScreen.storyboard in Resources */,
 				91FEC39F21882E790003014E /* Assets.xcassets in Resources */,
 				91FEC39D21882E780003014E /* Main.storyboard in Resources */,
+				9199850E2189591600E7895E /* demo.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FEC3B121884ED00003014E /* CCReaderViewModel.swift in Sources */,
 				91FEC39A21882E780003014E /* ViewController.swift in Sources */,
+				9199850C21894F5C00E7895E /* CCReaderTXTUtil.swift in Sources */,
+				91FEC3AC218830070003014E /* CCReaderController.swift in Sources */,
+				91FEC3B42188534E0003014E /* CCCatalogue.swift in Sources */,
+				91FEC3AE218839980003014E /* CCReaderContentVC.swift in Sources */,
 				91FEC39821882E780003014E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
