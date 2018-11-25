@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9193775C219ACC58006F329D /* demo2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9193775B219ACC58006F329D /* demo2.txt */; };
+		9193775E219AD081006F329D /* demo1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9193775D219AD081006F329D /* demo1.txt */; };
 		9199850C21894F5C00E7895E /* CCReaderTXTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199850B21894F5C00E7895E /* CCReaderTXTUtil.swift */; };
 		9199850E2189591600E7895E /* demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9199850D2189591600E7895E /* demo.txt */; };
 		91FEC39821882E780003014E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FEC39721882E780003014E /* AppDelegate.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9193775B219ACC58006F329D /* demo2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo2.txt; sourceTree = "<group>"; };
+		9193775D219AD081006F329D /* demo1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo1.txt; sourceTree = "<group>"; };
 		9199850B21894F5C00E7895E /* CCReaderTXTUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderTXTUtil.swift; sourceTree = "<group>"; };
 		9199850D2189591600E7895E /* demo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.txt; sourceTree = "<group>"; };
 		91FEC39421882E780003014E /* CCReader-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCReader-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +78,8 @@
 		91FEC39621882E780003014E /* CCReader-swift */ = {
 			isa = PBXGroup;
 			children = (
+				9193775D219AD081006F329D /* demo1.txt */,
+				9193775B219ACC58006F329D /* demo2.txt */,
 				9199850D2189591600E7895E /* demo.txt */,
 				91FEC3A921882E940003014E /* Reader */,
 				91FEC39721882E780003014E /* AppDelegate.swift */,
@@ -181,9 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				91FEC3A221882E790003014E /* LaunchScreen.storyboard in Resources */,
+				9193775E219AD081006F329D /* demo1.txt in Resources */,
 				91FEC39F21882E790003014E /* Assets.xcassets in Resources */,
 				91FEC39D21882E780003014E /* Main.storyboard in Resources */,
 				9199850E2189591600E7895E /* demo.txt in Resources */,
+				9193775C219ACC58006F329D /* demo2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,11 @@ import UIKit
 struct CCReaderTXTUtil {
 
     
+    
+    /// 从.txt文本提取章节目录
+    ///
+    /// - Parameter text: 文本内容
+    /// - Returns: []
     static func catalogue(text:String) -> [CCCatalogueProtocol]? {
         
         if (text.count == 0) {
@@ -68,6 +73,15 @@ struct CCReaderTXTUtil {
     
     }
     
+    
+    
+    /// 获取章节内容
+    ///
+    /// - Parameters:
+    ///   - catalogue: 目录
+    ///   - index: 索引
+    ///   - text: .txt 文本
+    /// - Returns: ---
     static func content(by catalogue: [CCCatalogueProtocol], at index: Int , from text: String) -> String? {
         if index == catalogue.count - 1 {
             var item = catalogue[index]
@@ -88,57 +102,31 @@ struct CCReaderTXTUtil {
         return nil
     }
     
-    /*
+    
+    static func readerTxt(from path: String) -> String? {
+        
+        let encode = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))
+        
+        if var text  =  try? String.init(contentsOfFile: path, encoding: String.Encoding(rawValue: encode)) {
+            text = text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            return (text as NSString).replacingOccurrences(of: "\n\n", with: "\n")
+           
+        }
+    
+        if var text = try? String.init(contentsOfFile: path, encoding: String.Encoding.utf8) {
+            text = text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            return (text as NSString).replacingOccurrences(of: "\n\n", with: "\n")
+        }
 
-    NSMutableArray *array = [NSMutableArray array];
-    if (regex == nil && [text isEqualToString:@""])
-    {
-    return nil;
+        return nil
     }
     
-    NSRange range = { 0 , text.length };
-    NSInteger location = 0;
-    NSInteger length = 0;
-    
-    while (true) {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    range = [text rangeOfString:regex options:NSRegularExpressionSearch range:range];
-    if (range.location == NSNotFound && range.length == 0)
-    {
-    break;
-    }
-    [dict setObject:@(range.location) forKey:@"position"];
-    
-    //获取每一章节的标题
-    NSString *chapterTitle = [text substringWithRange:range];
-    chapterTitle = [chapterTitle stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
-    [dict setObject:chapterTitle forKey:@"title"];
-    
-    [array addObject:dict];
-    
-    location = range.location + range.length;
-    length = text.length - range.location - range.length;
-    range = NSMakeRange(location, length);
-    }
-    
-    //开头序言的处理
-    if (array.count > 0) {
-    NSDictionary *dict = array[0];
-    NSInteger positon = [dict[@"position"] integerValue];
-    if (positon > 0) {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:@"开篇" forKey:@"title"];
-    [dict setObject:@(0) forKey:@"position"];
-    [array insertObject:dict atIndex:0];
-    }
-    }
-    
-    return array;
-    }
+}
 
- */
-    
-    
+
+
+// MARK: - core text分页处理
+extension CCReaderTXTUtil {
     static func paging(text: String, by size: CGSize) -> [NSAttributedString]? {
         if text.count == 0 {
             return nil
@@ -152,7 +140,7 @@ struct CCReaderTXTUtil {
         paragraphStyle.lineSpacing = 9.0
         /// 段落间距
         paragraphStyle.paragraphSpacing = 0
-    
+        
         
         let label = UILabel()
         label.text = "中国"
@@ -169,9 +157,9 @@ struct CCReaderTXTUtil {
             //字符间距
             NSAttributedString.Key.kern : 0,
             NSAttributedString.Key.paragraphStyle : paragraphStyle
-            ]
+        ]
         let attrString = NSAttributedString(string: text, attributes: attrs)
-    
+        
         return self.coreTextPaging(attrString: attrString, size: size)
     }
     
@@ -180,14 +168,14 @@ struct CCReaderTXTUtil {
         var pagingResult = [NSAttributedString]()
         
         let framesetter = CTFramesetterCreateWithAttributedString(attrString)
-
+        
         let width = Double(size.width)
         let height = Double(size.height)
         let rect =  CGRect(x: 0, y: 0, width: width, height: height)
         
         
         let path = CGPath(rect: rect, transform: nil)
-
+        
         var textPos = 0;
         let strLength = attrString.length
         while (textPos < strLength)  {
@@ -200,16 +188,16 @@ struct CCReaderTXTUtil {
             //获取范围并转换为NSRange，然后以NSAttributedString形式保存
             let str = attrString.attributedSubstring(from: ra)
             pagingResult.append(str)
- 
+            
             //移动当前文本位置
             textPos += frameRange.length;
             
-//            CFRelease(frame);
+            //            CFRelease(frame);
         }
-//        CGPathRelease(path);
-//        CFRelease(framesetter);
+        //        CGPathRelease(path);
+        //        CFRelease(framesetter);
         return pagingResult;
-    
+        
     }
 
 }
