@@ -11,8 +11,6 @@ import UIKit
 
 struct CCReaderTXTUtil {
 
-    
-    
     /// 从.txt文本提取章节目录
     ///
     /// - Parameter text: 文本内容
@@ -132,7 +130,8 @@ extension CCReaderTXTUtil {
             return nil
         }
         
-        let font = UIFont(name: "Heiti SC", size: 20)
+        let fontSize = CCReaderSettingUtil.readerFontSize
+        let font = UIFont(name: "Heiti SC", size: CGFloat(fontSize))
         
         let paragraphStyle = NSMutableParagraphStyle()
         
@@ -149,10 +148,11 @@ extension CCReaderTXTUtil {
         
         paragraphStyle.firstLineHeadIndent = label.frame.size.width
         
+        let color = CCReaderSettingUtil.readerTextColor
         
         let attrs: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.font : font!,
-            NSAttributedString.Key.foregroundColor : UIColor.black,
+            NSAttributedString.Key.foregroundColor : color,
             
             //字符间距
             NSAttributedString.Key.kern : 0,

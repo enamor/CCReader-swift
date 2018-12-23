@@ -4,18 +4,28 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CCReader-swift/Reader/Controlller/CCReaderContentController.swift"
-            timestampString = "562576752.241894"
+            filePath = "CCReader-swift/Reader/Util/CCReaderSettingUtil.swift"
+            timestampString = "567234326.852525"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "changeBGType(newType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,77 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CCReader-swift/Reader/ViewModel/CCReaderViewModel.swift"
-            timestampString = "562837151.867673"
+            filePath = "CCReader-swift/Reader/Util/CCReaderSettingUtil.swift"
+            timestampString = "567234326.852821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "initPrePage()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CCReader-swift/Reader/Controlller/CCReaderController.swift"
-            timestampString = "563796715.037055"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "pageViewController(_:viewControllerAfter:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CCReader_swift.CCReaderController.pageViewController(_: __C.UIPageViewController, viewControllerAfter: __C.UIViewController) -&gt; Swift.Optional&lt;__C.UIViewController&gt;"
-                  moduleName = "CCReader-swift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhouen/Desktop/CCReader-swift/CCReader-swift/Reader/Controlller/CCReaderController.swift"
-                  timestampString = "563796715.170011"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
-                  offsetFromSymbolStart = "478">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in CCReader_swift.CCReaderController.pageViewController(_: __C.UIPageViewController, viewControllerAfter: __C.UIViewController) -&gt; Swift.Optional&lt;__C.UIViewController&gt;"
-                  moduleName = "CCReader-swift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhouen/Desktop/CCReader-swift/CCReader-swift/Reader/Controlller/CCReaderController.swift"
-                  timestampString = "563796715.171949"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
-                  offsetFromSymbolStart = "30">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CCReader-swift/Reader/Controlller/CCReaderController.swift"
-            timestampString = "563796715.037114"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "pageViewController(_:viewControllerAfter:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "changeBGType(newType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,13 +51,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CCReader-swift/Reader/Util/CCReaderTXTUtil.swift"
-            timestampString = "564849226.612265"
+            filePath = "CCReader-swift/Reader/Util/CCReaderSettingUtil.swift"
+            timestampString = "567234326.852873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "content(by:at:from:)"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "getTextColor()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +68,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CCReader-swift/Reader/Controlller/CCReaderController.swift"
-            timestampString = "563796715.038307"
+            timestampString = "567234326.852926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "pageViewController(_:viewControllerBefore:)"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "cc_initObserver()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -137,29 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CCReader-swift/Reader/Util/CCReaderTXTUtil.swift"
-            timestampString = "564849226.612618"
+            filePath = "CCReader-swift/Reader/Controlller/CCReaderController.swift"
+            timestampString = "567234326.853103"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "readerTxt(from:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CCReader-swift/Reader/Util/CCReaderTXTUtil.swift"
-            timestampString = "564849226.6128629"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "readerTxt(from:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "cc_initObserver()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

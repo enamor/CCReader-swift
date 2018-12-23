@@ -10,7 +10,14 @@ import UIKit
 
 class CCReaderContentVC: UIViewController {
 
-    let textView = CCReaderContentView()
+    var chapterIndex: Int = 0
+    var pageIndex: Int = 0
+    var themeBgType: CCReaderBGType? {
+        didSet {
+            setThemeBgType()
+        }
+    }
+    let textView = CCReaderContentView(frame: CC_R_Novel_Drwa_Rect)
     var text: NSAttributedString? {
         didSet {
             cc_fillData()
@@ -20,23 +27,29 @@ class CCReaderContentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.white
-
+        if let image = CCReaderSettingUtil.getBGImage() {
+            view.layer.contents = image.cgImage
+        }
+        view.addSubview(textView)
         textView.backgroundColor = UIColor.clear
-        textView.frame = UIScreen.main.bounds
-        self.view.addSubview(textView)
-        
-        
-        textView.backgroundColor = UIColor.lightGray
-        
-        cc_fillData()
     }
 
 }
-extension CCReaderContentVC {
-    private func cc_fillData() {
+private extension CCReaderContentVC {
+    func cc_fillData() {
         textView.text = text
     }
+    
+    func setThemeBgType() {
+        guard let bgType = themeBgType else {
+            return
+        }
+        CCReaderSettingUtil.bgThemeType = bgType
+        if let image = CCReaderSettingUtil.getBGImage() {
+            view.layer.contents = image.cgImage
+        }
+    }
+    
 }
 
 
@@ -45,6 +58,7 @@ class CCReaderContentView: UIView {
     var text: NSAttributedString? {
         didSet {
             cc_fillData()
+            setNeedsDisplay()
         }
     }
     
@@ -55,22 +69,20 @@ class CCReaderContentView: UIView {
             return
         }
         let setterRef = CTFramesetterCreateWithAttributedString(text)
-        let path = CGPath(rect: UIScreen.main.bounds, transform: nil)
+        let path = CGPath(rect: self.bounds, transform: nil)
         contentFrame = CTFramesetterCreateFrame(setterRef, CFRangeMake(0, text.length), path, nil)
-        
-        
-        self.setNeedsLayout()
+
     }
     
     override func draw(_ rect: CGRect) {
-        
+        super.draw(rect)
         guard let contentFrame = contentFrame,
             let ctx = UIGraphicsGetCurrentContext() else {
             return
         }
         
         ctx.textMatrix = CGAffineTransform.identity
-        ctx.translateBy(x: 0, y: UIScreen.main.bounds.size.height)
+        ctx.translateBy(x: 0, y: self.bounds.size.height)
         ctx.scaleBy(x: 1, y: -1)
         CTFrameDraw(contentFrame, ctx)
     }

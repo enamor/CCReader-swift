@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController,CCReaderlDateSource {
+class ViewController: UIViewController {
     let path = Bundle.main.path(forResource: "demo1", ofType: "txt")
     
+    
+    /**
     var catalogue: [CCCatalogueProtocol]?
     
     func catalogueOfReader(in reader: CCReaderController, callback: @escaping ([CCCatalogueProtocol]) -> ()) {
@@ -41,7 +43,9 @@ class ViewController: UIViewController,CCReaderlDateSource {
             }
         }
     }
-    
+ 
+ 
+ */
     
 
     override func viewDidLoad() {
@@ -56,8 +60,7 @@ class ViewController: UIViewController,CCReaderlDateSource {
     }
     
     @objc func btnAction()  {
-        let reader = CCReaderController()
-        reader.dataSource = self
+        let reader = CCReaderController(dataSource: CCReaderTXTDefaultViewModel())
         self.present(reader, animated: false, completion: nil)
     }
 
