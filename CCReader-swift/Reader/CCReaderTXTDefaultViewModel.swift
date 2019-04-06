@@ -26,7 +26,7 @@ class CCReaderTXTDefaultViewModel: CCReaderProtocol {
 //        callback(cat ?? [])
         
         DispatchQueue.global().async {
-            let path = Bundle.main.path(forResource: "demo1", ofType: "txt") ?? ""
+            let path = Bundle.main.path(forResource: "demo2", ofType: "txt") ?? ""
             let content = CCReaderTXTUtil.readerTxt(from: path) ?? ""
             
             self.txtContent = content

@@ -44,7 +44,7 @@ class CCReaderFunctionView: UIView {
         self.addSubview(topView)
         self.addSubview(bottomView)
         
-        topView.backgroundColor = UIColor.black
+        topView.backgroundColor = UIColor.white
         bottomView.backgroundColor = UIColor.black
         
        

@@ -8,25 +8,6 @@
 
 import UIKit
 
-enum CCReaderBGType: Int {
-    case yellow = 11, green, blue, pink, black
-    
-    func bgImage() -> UIImage? {
-        switch self {
-        case .yellow:
-            return UIImage(named: "CC_Raader_bg_yellow")
-        case .green:
-            return UIImage(named: "CC_Raader_bg_green")
-        case .blue:
-            return UIImage(named: "CC_Raader_bg_blue")
-        case .pink:
-            return UIImage(named: "CC_Raader_bg_pink")
-        case .black: //夜间模式
-            return UIImage(color: .black, size: UIScreen.main.bounds.size)
-        }
-        
-    }
-}
 
 typealias ReaderClosureBGType = (CCReaderBGType) -> Void
 
@@ -40,6 +21,8 @@ class CCReaderSettingBgView: UIView, UICollectionViewDataSource, UICollectionVie
     
     
     let reuseIdentifier = "CCPageControlCell"
+    
+    var currentCell: UICollectionViewCell?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,22 +39,40 @@ class CCReaderSettingBgView: UIView, UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        if indexPath.item % 2 == 0 {
-            cell.backgroundColor = UIColor.blue
-        } else {
-            cell.backgroundColor = UIColor.blue
+        
+        if let bgType = CCReaderBGType(rawValue: indexPath.item + 11) {
+            let image = CCReaderSettingUtil.getBGImage(bgType: bgType)
+            cell.layer.contents = image?.cgImage
+            
+            if bgType == CCReaderSettingUtil.bgThemeType {
+                cell.layer.borderWidth = 2.0
+                cell.layer.borderColor = UIColor.red.cgColor
+                currentCell = cell
+            }
         }
+
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let typeSign = indexPath.item + 11
+        
+        let cell = collectionView.cellForItem(at: indexPath)
         let type = CCReaderBGType(rawValue: typeSign) ?? CCReaderBGType.yellow
         if let callBack = callBack {
             callBack(type)
+            
+            
+            self.currentCell?.layer.borderWidth = 0
+            
+            cell?.layer.borderWidth = 2.0
+            cell?.layer.borderColor = UIColor.red.cgColor
+            currentCell = cell
+            
         }
     }
+
     
     func cc_initSubview() {
         

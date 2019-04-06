@@ -9,6 +9,25 @@
 import UIKit
 
 
+enum CCReaderBGType: Int {
+    case yellow = 11, green, blue, pink, black
+    
+    func bgImage() -> UIImage? {
+        switch self {
+        case .yellow:
+            return UIImage(named: "CC_Raader_bg_yellow")
+        case .green:
+            return UIImage(named: "CC_Raader_bg_green")
+        case .blue:
+            return UIImage(named: "CC_Raader_bg_blue")
+        case .pink:
+            return UIImage(named: "CC_Raader_bg_pink")
+        case .black: //夜间模式
+            return UIImage(color: .black, size: UIScreen.main.bounds.size)
+        }
+        
+    }
+}
 
 
 struct CCReaderSettingUtil {
@@ -39,6 +58,10 @@ struct CCReaderSettingUtil {
     /// 获取背景图片
     static func getBGImage() -> UIImage? {
         return self.bgThemeType.bgImage()
+    }
+    
+    static func getBGImage(bgType: CCReaderBGType) -> UIImage? {
+        return bgType.bgImage()
     }
     
     

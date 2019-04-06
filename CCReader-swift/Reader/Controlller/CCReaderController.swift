@@ -125,6 +125,7 @@ private extension CCReaderController {
                 print("返回")
             case .actionTypeBottomOne:
                 print("目录")
+                self?.catalogAction()
             case .actionTypeBottomTwo:
                 if CCReaderSettingUtil.nightMode() {
                     self?.currentVC.themeBgType = CCReaderBGType.yellow
@@ -146,6 +147,17 @@ private extension CCReaderController {
     }
     
     
+    func catalogAction() {
+        let vc = CCReaderCatalogController()
+        let animation = CATransition()
+        animation.duration = 0.3
+        animation.type = .moveIn
+        animation.subtype = .fromLeft
+        view.window?.layer.add(animation, forKey: nil)
+        
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: false, completion: nil)
+    }
     @objc func tap(tap: UITapGestureRecognizer) {
         let point = tap.location(in: self.view)
         if point.x < CC_R_SCREEN_WIDTH * 0.2  ||

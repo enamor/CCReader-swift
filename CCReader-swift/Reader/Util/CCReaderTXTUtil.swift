@@ -107,13 +107,17 @@ struct CCReaderTXTUtil {
         
         if var text  =  try? String.init(contentsOfFile: path, encoding: String.Encoding(rawValue: encode)) {
             text = text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-            return (text as NSString).replacingOccurrences(of: "\n\n", with: "\n")
+            text = text.replacingOccurrences(of: "\r\n", with: "\n")
+            return text.replacingOccurrences(of: "\n\n", with: "\n")
+//            return (text as NSString).replacingOccurrences(of: "\n\n", with: "\n")
            
         }
     
         if var text = try? String.init(contentsOfFile: path, encoding: String.Encoding.utf8) {
             text = text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-            return (text as NSString).replacingOccurrences(of: "\n\n", with: "\n")
+            text = text.replacingOccurrences(of: "\r\n", with: "\n")
+            return text.replacingOccurrences(of: "\n\n", with: "\n")
+//            return (text as NSString).replacingOccurrences(of: "\n\n", with: "\n")
         }
 
         return nil
@@ -138,7 +142,7 @@ extension CCReaderTXTUtil {
         /// 行间距
         paragraphStyle.lineSpacing = 9.0
         /// 段落间距
-        paragraphStyle.paragraphSpacing = 0
+        paragraphStyle.paragraphSpacing = 10
         
         
         let label = UILabel()

@@ -17,6 +17,7 @@
 		9193775E219AD081006F329D /* demo1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9193775D219AD081006F329D /* demo1.txt */; };
 		9199850C21894F5C00E7895E /* CCReaderTXTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199850B21894F5C00E7895E /* CCReaderTXTUtil.swift */; };
 		9199850E2189591600E7895E /* demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9199850D2189591600E7895E /* demo.txt */; };
+		919A4A3C21CFCFA100235282 /* CCReaderCatalogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919A4A3B21CFCFA100235282 /* CCReaderCatalogController.swift */; };
 		91A3B04621C69E7E0013C351 /* CCReaderSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3B04521C69E7E0013C351 /* CCReaderSettingView.swift */; };
 		91A3B04821C69F3D0013C351 /* CCReaderSettingFontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3B04721C69F3D0013C351 /* CCReaderSettingFontView.swift */; };
 		91A3B04A21C69F500013C351 /* CCReaderSettingBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3B04921C69F500013C351 /* CCReaderSettingBgView.swift */; };
@@ -47,6 +48,7 @@
 		9193775D219AD081006F329D /* demo1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo1.txt; sourceTree = "<group>"; };
 		9199850B21894F5C00E7895E /* CCReaderTXTUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderTXTUtil.swift; sourceTree = "<group>"; };
 		9199850D2189591600E7895E /* demo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.txt; sourceTree = "<group>"; };
+		919A4A3B21CFCFA100235282 /* CCReaderCatalogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderCatalogController.swift; sourceTree = "<group>"; };
 		91A3B04521C69E7E0013C351 /* CCReaderSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderSettingView.swift; sourceTree = "<group>"; };
 		91A3B04721C69F3D0013C351 /* CCReaderSettingFontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderSettingFontView.swift; sourceTree = "<group>"; };
 		91A3B04921C69F500013C351 /* CCReaderSettingBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCReaderSettingBgView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				91FEC3AB218830070003014E /* CCReaderController.swift */,
 				91FEC3AD218839980003014E /* CCReaderContentVC.swift */,
+				919A4A3B21CFCFA100235282 /* CCReaderCatalogController.swift */,
 			);
 			path = Controlller;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				91A3B04621C69E7E0013C351 /* CCReaderSettingView.swift in Sources */,
 				914629DA21C3DC80000F1BC1 /* CCReaderFunctionView.swift in Sources */,
 				914629DC21C3DCA1000F1BC1 /* CCReaderFunctionTopView.swift in Sources */,
+				919A4A3C21CFCFA100235282 /* CCReaderCatalogController.swift in Sources */,
 				91C4F26621B288D4007E3488 /* CCError.swift in Sources */,
 				91FEC3AC218830070003014E /* CCReaderController.swift in Sources */,
 				91BC588D21C4C0F200BE0B86 /* Let.swift in Sources */,
